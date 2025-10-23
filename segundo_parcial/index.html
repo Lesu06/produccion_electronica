@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio - Producción Electrónica</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff6a00;
+      --muted:#9aa4b2;
+      --glass:rgba(255,255,255,0.04);
+    }
+
+    body{
+      font-family: Roboto, Arial, sans-serif;
+      background:linear-gradient(180deg,#07101a 0%, #0f1724 100%);
+      color:#e6f0fb;
+      margin:0;
+      padding:24px;
+    }
+
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 0;
+  gap: 12px; 
+}
+
+header .logo {
+  width: 50px;     
+  height: 50px;     
+  object-fit: contain;
+}
+
+
+    header h1{
+      font-size:1.4rem;
+      margin:0;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:14px;
+    }
+
+    .card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px auto;    
+  max-width: 800px;    
+  width: 90%;          
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+
+ 
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+    .card.visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2{color:#fff;margin-top:4px;}
+    .full{grid-column:1/-1;}
+    .example-img{width:100%;border-radius:8px;}
+    .integrantes { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+    .integrante { flex: 1 1 200px; text-align: center; background: var(--glass); padding: 12px; border-radius: 8px; }
+    .integrante img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+    .galeria img { width: 100%; max-width: 280px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+    .detalle { display:none; margin-top:12px; line-height:1.6; }
+    .card button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    .card button:hover { background: #cc5500; }
+    nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 14px;
+  transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+nav a:hover {
+  transform: scale(1.2); 
+  color: var(--accent); 
+}
+.example-video {
+  width: 250px;   
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+
+  display: block;    
+  margin: 20px auto;  
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <script>
+
+  function toggleDetalle(id) {
+    const detalle = document.getElementById(id);
+    detalle.style.display = (detalle.style.display === "block") ? "none" : "block";
+  }
+
+ 
+  window.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.card');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < windowHeight - 100) { 
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); 
+  });
+</script>
+
+
+<header>
+  <div class="container">
+    
+    <img src="imagenes/logotipo.jpeg" alt="Logotipo Universidad" class="logo">
+    
+    <h1>Portafolio: Producción Electrónica</h1>
+    
+  <nav>
+  <a href="#kicad">Soldadura</a>
+  <a href="#mods">Corte de Vinil</a>
+  <a href="#monofab">Kicad</a>
+  <a href="#trazas">Galeria</a>
+  <a href="#integrantes">Integrantes</a>
+  <a href="../index.html">Home (Primer parcial)</a>
+  </nav>
+  </div>
+</header>
+
+
+<section id="introduccion" class="card">
+  <h2>Introducción al segundo parcial</h2>
+  <p>
+El proceso de diseño y elaboración de circuitos electrónicos requiere una combinación de herramientas digitales y técnicas manuales que garantizan la funcionalidad y la precisión de los proyectos. En este contexto, el uso de programas como Multisim, las prácticas de soldadura electrónica y el corte de vinil desempeñan un papel fundamental. los cuales hicimos practica
+en este Segundo Parcial en la materia de produccion electronica impartida por el profesor: <br>
+  <a href="mailto:javier.osorio.figueroa@iberopuebla.mx" style="color: var(--accent); text-decoration: none;">
+    Javier Osorio Figueroa
+  </a>.
+</p>
+
+  <p>
+    En conjunto, estos tres conocimientos constituyen una base esencial para cualquier estudiante o profesional de ingeniería que busque desarrollar proyectos electrónicos completos, desde el diseño digital hasta la manufactura física del prototipo.
+  </p>
+  <ul>
+    <li>La soldadura: Es una técnica esencial para unir componentes en una placa de circuito impreso (PCB), garantizando conexiones eléctricas seguras y duraderas. Su correcta aplicación influye directamente en el rendimiento y la vida útil del dispositivo electrónico.</li> <br>
+    <li>Corte de vinil: Representa una etapa importante dentro de los procesos de personalización y rotulación en el laboratorio o taller. Mediante el uso de cortadoras controladas por computadora, se pueden crear etiquetas, símbolos o diseños que facilitan la identificación y el acabado estético de los proyectos.</li> <br>
+    <li>Multisim: Permite simular circuitos eléctricos y electrónicos antes de su construcción física, lo cual ayuda a detectar errores, analizar el comportamiento de los componentes y optimizar los diseños.</li> <br>
+
+  </ul>
+  <div class="galeria" style="display:flex;justify-content:center;margin:16px 0;">
+    <img src="imagenes/electronica.jpg" alt="Imagen de presentación del equipo" class="example-img">
+  </div>
+</section>
+
+<div class="floating-card">
+  <h3>Descargas</h3>
+  <ul>
+    <li><a href="archivos/pcb_raul.zip" download>Evidencias Raúl (Diagramas)</a></li>
+    <li><a href="archivos/pcb_jesus.zip" download>Evidencias Jesús(Diagramas)</a></li>
+    <li><a href="archivos/kicad_fablab2025 (1).rar" download>Librerias de KiCad FabLab</a></li>
+  </ul>
+</div>
+
+<style>
+.floating-card {
+  position: fixed;
+  top: 100px; 
+  right: 20px; 
+  background: var(--card); 
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  z-index: 1000;
+  width: 200px;
+  border: 1px solid var(--glass);
+}
+
+.floating-card h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  text-align: center;
+  color: #fff; 
+}
+
+.floating-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-card li {
+  margin: 10px 0;
+}
+
+.floating-card a {
+  text-decoration: none;
+  color: var(--muted); 
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.floating-card a:hover {
+  color: var(--accent); 
+}
+</style>
+
+<section id="kicad" class="card">
+  <h2>Cómo soldar componentes adecuadamente</h2>
+  <p>Paso a paso para una soldadura adecuada</p>
+  <button onclick="toggleDetalle('detalle-kicad')">Ver detalle</button>
+
+  <div id="detalle-kicad" class="detalle">
+
+    <h3>Herramientas y preparación</h3>
+    <ol>
+      <li>Necesitas un soldador de buena calidad: se recomienda uno con control de temperatura o al menos 30 W o más, para asegurar que el calor llegue correctamente a la unión.</li>
+      <li>Punta adecuada: para PCB (placas), una punta tipo chisel (cuña) o biselada suele funcionar mejor que una punta demasiado fina o demasiado gorda.</li>
+      <li>Alambre de soldadura con núcleo de flux (resina) para electrónica, no usar alambre de plomería o acido-core.</li>
+      <li>Limpiar y “estañar” (tinning) la punta del soldador antes de usar: asegura buen contacto térmico y reduce oxidación.</li>
+      <li>Trabaja en un área ventilada, usa protección ocular, evita quemaduras y evita que la punta toque superficies no deseadas.</li>
+    </ol>
+
+    <h3>Técnica de soldado</h3>
+    <ul>
+      <li>Monta el componente en la placa (o el alambre) y asegúrate de que está fijo.</li>
+      <li>Aplica la punta del soldador en la unión entre la pista/plataforma y el terminal del componente: el objetivo es calentar ese punto, no solo el alambre de soldadura.</li>
+      <li>Una vez que la unión está caliente, acerca el alambre de soldadura al punto caliente (no al extremo del soldador únicamente) y permite que se funda y fluya, rellenando la zona de unión. No deposites una gran bola de soldadura desde el soldador hacia la pista, sino deja que fluya naturalmente desde el punto caliente.</li>
+      <li>Retira primero el alambre de soldadura, luego retira el soldador. Deja que la unión se enfríe sin moverla (si la mueves pronto, puede formarse una “unión fría” que es débil).</li>
+      <li>Inspecciona la unión: debe verse brillante, con forma de fillete (curva suave) entre la pata del componente y la pista. Evita una unión opaca, grumosa, con exceso de soldadura o con “bola” en lugar de fillete</li>
+      <li>Si la unión está defectuosa, usa un removedor de soldadura (“desoldador” o malla de desoldar) para limpiar y volver a hacerla.</li>
+    </ul>
+
+    <h3>Consejos y buenas prácticas</h3>
+    <ul>
+      <li>No uses demasiado calor durante mucho tiempo: puede dañar el componente, levantar pistas de la PCB o deteriorar la soldadura.</li>
+      <li>Limpia la punta con esponja húmeda o pad de limpieza, y estaña la punta después de cada sesión.</li>
+      <li>Usa flux adicional cuando tengas dificultades de flujo de soldadura, o componentes muy pequeños.</li>
+      <li>Planifica el orden de montaje: comienza con componentes más bajos, luego más altos, etc., para facilitar la soldadura.</li>
+    </ul>
+
+    <div class="galeria" style="display:flex;justify-content:center;margin:16px 0;">
+      <img src="imagenes/soldadura.jpg" alt="Captura de PCBnew / ruteo">
+    </div>
+    <p class="note">Soldadura</p>
+  </div>
+</section>
+
+   
+   <section id="mods" class="card">
+  <h2>Cómo hacer un corte de vinil</h2>
+  <p>¿Qué es el corte de vinil?</p>
+  <button onclick="toggleDetalle('detalle-mods')">Ver detalle</button>
+  <div id="detalle-mods" class="detalle">
+El corte de vinil es un proceso donde una máquina especializada (cortadora de vinil) usa una pequeña cuchilla para recortar formas, 
+letras o diseños en láminas adhesivas de vinil, que luego se transfieren o aplican a superficies como paredes, automóviles, productos, etc. <br>
+<h2>Pasos básicos</h2>
+<ul> 
+  
+  <li>Diseña tu gráfico en software de ilustración (por ejemplo Adobe Illustrator, Inkscape) 
+    o programa de corte, asegurándote que esté en vectores, sin trazos excesivos, con las capas correctas.</li>
+    <li>Prepara el archivo para la cortadora: ajustar tamaños, orientar el diseño, reflejar el diseño si es vinil para transferencia térmica, etc.</li>
+    <li>Carga el material de vinil en la máquina: coloca el rollo o la lámina, ajusta los rodillos, selecciona la velocidad de corte, la profundidad de cuchilla, etc. Verifica que el material esté bien alineado.</li>
+    <li>Realiza un corte de prueba para asegurarte que la cuchilla corta bien el vinil sin cortar el liner (el respaldo) o quedarse corta. Ajusta parámetros si es necesario.</li>
+    <li>Después del corte, “desmaleza” (weeding) el diseño: retira cuidadosamente las partes de vinil que no forman parte del gráfico (el excedente).</li> 
+    <li>Transfiere o aplica: usa cinta de transferencia si es un logotipo, limpia la superficie, aplica el vinil y luego retira la cinta de transferencia dejando el vinil adherido. Si es vinil de transferencia térmica (para camisetas), usa plancha térmica.   </li>
+</ul>
+<h3>Consejos</h3>
+<ul>
+  <li>Asegúrate de que la cuchilla esté afilada: una cuchilla desgastada genera bordes irregulares.</li>
+  <li>Ajusta la velocidad de corte más lenta cuando el diseño es muy detallado.</li>
+  <li>Limpia la superficie antes de aplicar el vinil para que la adhesión sea óptima.</li>
+  <li>Si vas a aplicar en superficies curvas, considera usar una pistola de calor o vinil que soporta curvatura</li>
+  <li>Guarda un archivo maestro y versiona los diseños para futuras reimpresiones.</li>
+</ul>
+    </p>
+    <img src="imagenes/corte_vinil.jpg" alt="Foto de la monoFab SRM-20" class="example-img">
+  </div>
+</section>
+
+
+<section id="multisim" class="card">
+  <h2>Uso del programa Multisim</h2>
+  <p>¿Qué es Multisim?</p>
+  <button onclick="toggleDetalle('detalle-multisim')">Ver detalle</button>
+
+  <div id="detalle-multisim" class="detalle">
+    <p>
+      <strong>Multisim</strong> es un software de simulación electrónica desarrollado por National Instruments. 
+      Está diseñado para crear, analizar y probar circuitos electrónicos de forma virtual, permitiendo al usuario 
+      visualizar el comportamiento de los componentes antes de implementarlos físicamente. 
+      Es ampliamente usado en entornos educativos e industriales para el diseño y análisis de circuitos analógicos y digitales.
+    </p>
+
+    <h3>Entorno de trabajo en Multisim</h3>
+    <ul>
+      <li><strong>Área de diseño:</strong> espacio principal donde se colocan y conectan los componentes.</li>
+      <li><strong>Barra de componentes:</strong> permite buscar resistencias, capacitores, transistores, fuentes, microcontroladores, etc.</li>
+      <li><strong>Instrumentos virtuales:</strong> incluye multímetro, osciloscopio, generador de funciones, fuentes de poder, analizadores lógicos, entre otros.</li>
+      <li><strong>Panel de simulación:</strong> se usa para iniciar, detener o pausar la simulación del circuito.</li>
+    </ul>
+
+    <h3>Primeros pasos en Multisim</h3>
+    <ul>
+      <li>Crear un nuevo proyecto desde <em>Archivo → Nuevo → Diseño</em>.</li>
+      <li>Seleccionar los componentes desde la biblioteca (<em>Place → Component</em>) y colocarlos en el área de trabajo.</li>
+      <li>Realizar las conexiones entre los terminales de los componentes con la herramienta de cableado.</li>
+      <li>Insertar instrumentos de medición como voltímetros, amperímetros u osciloscopios para analizar el circuito.</li>
+      <li>Guardar el proyecto y ejecutar la simulación para observar el comportamiento del circuito.</li>
+    </ul>
+
+    <h3>Tipos de simulación en Multisim</h3>
+    <ul>
+      <li><strong>Simulación transitoria:</strong> analiza el comportamiento del circuito en función del tiempo (ideal para señales variables).</li>
+      <li><strong>Simulación en DC:</strong> calcula los valores de voltaje y corriente en estado estable.</li>
+      <li><strong>Simulación AC:</strong> muestra el comportamiento del circuito frente a señales senoidales en diferentes frecuencias.</li>
+      <li><strong>Análisis de Fourier:</strong> permite observar los armónicos de una señal y su composición en frecuencia.</li>
+      <li><strong>Análisis de barrido paramétrico:</strong> varía un parámetro (por ejemplo, resistencia o voltaje) para observar cómo cambia la respuesta del circuito.</li>
+    </ul>
+
+    <h3>Ejemplo de simulación</h3>
+    <p>
+      Un ejemplo básico consiste en crear un circuito con una fuente de voltaje, una resistencia y un LED. 
+      Al ejecutar la simulación, se puede observar el encendido del LED y medir la caída de tensión en la resistencia con un multímetro virtual. 
+      De esta forma, el usuario aprende cómo fluye la corriente en un circuito real.
+    </p>
+
+    <h3>Ventajas de usar Multisim</h3>
+    <ul>
+      <li>Permite detectar errores antes de fabricar el circuito físico.</li>
+      <li>Cuenta con una interfaz intuitiva y amigable.</li>
+      <li>Incluye una gran biblioteca de componentes reales y simulados.</li>
+      <li>Es ideal para la enseñanza, el aprendizaje y la investigación electrónica.</li>
+    </ul>
+
+<!-- 🔹 Carrusel de evidencias Multisim -->
+<div class="carrusel-contenedor">
+  <div class="carrusel">
+    <div class="carrusel-item">
+      <img src="imagenes/rtaImage.jpg" alt="Diseño básico en Multisim">
+      <p class="descripcion">Diseño básico de circuito con resistencia y LED.</p>
+    </div>
+    <div class="carrusel-item">
+      <img src="imagenes/maxresdefault.jpg" alt="Simulación en Multisim">
+      <p class="descripcion">Simulación de voltaje y corriente en el osciloscopio virtual.</p>
+    </div>
+    <div class="carrusel-item">
+      <img src="imagenes/13614_Graphic1.png" alt="Componentes en Multisim">
+      <p class="descripcion">Vista de los componentes y herramientas en la interfaz.</p>
+    </div>
+  </div>
+
+
+  <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+  <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+</div>
+
+<style>
+.carrusel-contenedor {
+  position: relative;
+  max-width: 85%;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: #fff;
+}
+
+.carrusel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carrusel-item {
+  min-width: 100%;
+  text-align: center;
+}
+
+.carrusel-item img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-bottom: 2px solid #f58220;
+}
+
+.descripcion {
+  padding: 10px;
+  font-size: 0.95rem;
+  background-color: #f9f9f9;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(245,130,32,0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(245,130,32,1);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+</style>
+
+<script>
+let indiceCarrusel = 0;
+
+function moverCarrusel(direccion) {
+  const carrusel = document.querySelector('.carrusel');
+  const items = document.querySelectorAll('.carrusel-item');
+  indiceCarrusel = (indiceCarrusel + direccion + items.length) % items.length;
+  carrusel.style.transform = `translateX(${-indiceCarrusel * 100}%)`;
+}
+</script>
+
+  </div>
+</section>
+
+
+    <section id="trazas" class="card full">
+  <h2>Galería del proyecto</h2>
+  <p>Evidencias</p>
+
+  <div class="carousel">
+    
+    <div class="carousel-images">
+      <div class="slide">
+        <img src="imagenes/placa.jpg" alt="Pista ejemplo 02">
+        <p class="caption">Placa soldada</p>
+      </div>
+
+
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+</section>
+
+<style>
+  .carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background: var(--card);
+    padding: 12px 0;
+  }
+
+  .slide img {
+    width: 50%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .caption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .prev:hover, .next:hover { opacity: 1; }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    const total = slides.length;
+    if(index >= total) currentSlide = 0;
+    else if(index < 0) currentSlide = total - 1;
+    else currentSlide = index;
+
+    const offset = -currentSlide * 100;
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+  }
+
+  function moveSlide(step) {
+    showSlide(currentSlide + step);
+  }
+
+  
+  document.addEventListener('DOMContentLoaded', () => showSlide(currentSlide));
+</script>
+<section id="segundo-parcial" class="card">
+  <h2>Home (Primer Parcial)</h2>
+  <p>
+    Accede a la primera parte del portafolio, donde se encuentran las evidencias, proyectos y desarrollos correspondientes al primer parcial.
+  </p>
+  <a href="../index.html" class="button-link">Ir al Primer Parcial</a>
+</section>
+
+
+<style>
+.button-link {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.button-link:hover {
+  background: #cc5500;
+}
+</style>
+
+
+
+  
+<section id="integrantes" class="card full">
+  <h2>Integrantes del Equipo</h2>
+  <div class="integrantes">
+    <div class="integrante">
+      <img src="imagenes/sisis.jpg" alt="Integrante 1">
+      <p><strong>Jesus Santiago Muñoz</strong></p>
+      <p>Ingeniería en Mecatrónica</p>
+      <p><a href="mailto:201243@iberopuebla.mx">201243@iberopuebla.mx</a></p>
+    </div>
+    <div class="integrante">
+      <img src="imagenes/nonono.jpg" alt="Integrante 2">
+      <p><strong>Raul Sanchez Lora</strong></p>
+      <p>Ingeniería en Mecatrónica</p>
+      <p><a href="mailto:201583@iberopuebla.mx">201583@iberopuebla.mx</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="card fade-in">
+  <h2>Ubicación de la Universidad</h2>
+  <div class="map-container" style="width:100%;height:0;padding-bottom:56%;position:relative;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15088.484819715859!2d-98.2760029!3d19.014380049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc73e6e9e0efd%3A0x85adde493a769062!2sUniversidad%20Iberoamericana%20Puebla!5e0!3m2!1ses-419!2smx!4v1756693198982!5m2!1ses-419!2smx" 
+      style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+  </div>
+
+  <script>
+    function toggleDetalle(id) {
+      const detalle = document.getElementById(id);
+      detalle.style.display = (detalle.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
