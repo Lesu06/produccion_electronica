@@ -12,7 +12,6 @@
       --muted:#9aa4b2;
       --glass:rgba(255,255,255,0.04);
     }
-
     body{
       font-family: Roboto, Arial, sans-serif;
       background:linear-gradient(180deg,#07101a 0%, #0f1724 100%);
@@ -20,8 +19,6 @@
       margin:0;
       padding:24px;
     }
-
-
     header {
       position: sticky;
       top: 0;
@@ -29,7 +26,6 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
-
     header .container {
   display: flex;
   align-items: center;
@@ -37,27 +33,22 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 12px 0;
-  gap: 12px; 
+  gap: 12px;
 }
-
 header .logo {
-  width: 50px;     
-  height: 50px;     
+  width: 50px;    
+  height: 50px;    
   object-fit: contain;
 }
-
-
     header h1{
       font-size:1.4rem;
       margin:0;
     }
-
     nav a{
       color:var(--muted);
-      text-decoration:none;
+     text-decoration:none;
       margin-left:14px;
     }
-
     .card {
   background: var(--card);
   border-radius: 12px;
@@ -66,18 +57,14 @@ header .logo {
   max-width: 800px;    
   width: 90%;          
   box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-
- 
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
     .card.visible{
       opacity: 1;
       transform: translateY(0);
     }
-
     h2{color:#fff;margin-top:4px;}
     .full{grid-column:1/-1;}
     .example-img{width:100%;border-radius:8px;}
@@ -101,88 +88,70 @@ header .logo {
   color: var(--muted);
   text-decoration: none;
   margin-left: 14px;
-  transition: transform 0.3s ease, color 0.3s ease; 
+  transition: transform 0.3s ease, color 0.3s ease;
 }
-
 nav a:hover {
-  transform: scale(1.2); 
-  color: var(--accent); 
+  transform: scale(1.2);
+  color: var(--accent);
 }
 .example-video {
-  width: 250px;   
+  width: 250px;  
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-
   display: block;    
   margin: 20px auto;  
 }
-
-
-
-
   </style>
 </head>
 <body>
-
   <script>
-
   function toggleDetalle(id) {
     const detalle = document.getElementById(id);
     detalle.style.display = (detalle.style.display === "block") ? "none" : "block";
   }
-
- 
   window.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.card');
-
     function revealOnScroll() {
       const windowHeight = window.innerHeight;
       sections.forEach(section => {
         const top = section.getBoundingClientRect().top;
-        if(top < windowHeight - 100) { 
+       if(top < windowHeight - 100) {
           section.classList.add('visible');
         }
       });
-    }
 
+    }
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); 
+    revealOnScroll();
   });
 </script>
-
-
 <header>
   <div class="container">
-    
     <img src="imagenes/logotipo.jpeg" alt="Logotipo Universidad" class="logo">
-    
     <h1>Portafolio: Producción Electrónica</h1>
-    
   <nav>
   <a href="#kicad">KiCad</a>
   <a href="#mods">Uso de Mods</a>
-  <a href="#monofab">MonoFab</a>
   <a href="#trazas">Galeria</a>
   <a href="#integrantes">Integrantes</a>
-  <a href="segundo_parcial/index.html">Segundo Parcial</a> 
+  <a href="segundo_parcial/index.html">Segundo Parcial</a>
+  <a href="tercer_parcial/index.html">Tercel Parcial</a>
   </nav>
   </div>
 </header>
-
-
 <section id="introduccion" class="card">
   <h2>Introducción al Portafolio</h2>
   <p>
-  Nuestro equipo está conformado por dos estudiantes de la carrera Ingeniería Mecatrónica. 
-  Esta página sirve como carpeta de evidencias de lo que realizamos durante el semestre en la materia de 
-  “Producción Electrónica” dada por el Maestro 
+  Nuestro equipo está conformado por dos estudiantes de la carrera Ingeniería Mecatrónica.
+  Esta página sirve como carpeta de evidencias de lo que realizamos durante el semestre en la materia de
+  “Producción Electrónica” dada por el Maestro
   <a href="mailto:javier.osorio.figueroa@iberopuebla.mx" style="color: var(--accent); text-decoration: none;">
     Javier Osorio Figueroa
   </a>.
 </p>
-
   <p>
-    La producción electrónica es el proceso integral que abarca desde el diseño, la fabricación de componentes y el ensamblaje, hasta las pruebas y el empaquetado final de productos que utilizan principios electrónicos, que incluyen:
+    La producción electrónica es el proceso integral que abarca desde el diseño, la fabricación de componentes y el ensamblaje, hasta las 
+    pruebas y el empaquetado final de productos que utilizan principios electrónicos, que incluyen:
   </p>
   <ul>
     <li>Diseño: Se desarrollan los planos y diseños complejos, como los de las placas de circuito impreso (PCB), que son fundamentales para la función del dispositivo</li> <br>
@@ -191,15 +160,13 @@ nav a:hover {
     <li>Pruebas: Se realizan pruebas de validación, funcionamiento y calidad para asegurar que el diseño sea fiable y cumpla con los estándares. </li>
   </ul>
   <p>
-    El objetivo principal es adquirir experiencia práctica en el proceso completo de producción electrónica, 
+    El objetivo principal es adquirir experiencia práctica en el proceso completo de producción electrónica,
     desde el diseño conceptual hasta la materialización del prototipo.
   </p>
-
   <div class="galeria" style="display:flex;justify-content:center;margin:16px 0;">
     <img src="imagenes/electronica.jpg" alt="Imagen de presentación del equipo" class="example-img">
   </div>
 </section>
-
 <div class="floating-card">
   <h3>Descargas</h3>
   <ul>
@@ -208,13 +175,12 @@ nav a:hover {
     <li><a href="archivos/kicad_fablab2025 (1).rar" download>Librerias de KiCad FabLab</a></li>
   </ul>
 </div>
-
 <style>
 .floating-card {
   position: fixed;
-  top: 100px; 
-  right: 20px; 
-  background: var(--card); 
+  top: 100px;
+  right: 20px;
+  background: var(--card);
   border-radius: 12px;
   padding: 15px 20px;
   box-shadow: 0 6px 18px rgba(2,6,23,0.6);
@@ -222,47 +188,37 @@ nav a:hover {
   width: 200px;
   border: 1px solid var(--glass);
 }
-
 .floating-card h3 {
   margin-top: 0;
   font-size: 1.1em;
   text-align: center;
-  color: #fff; 
+  color: #fff;
 }
-
 .floating-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .floating-card li {
   margin: 10px 0;
 }
-
 .floating-card a {
   text-decoration: none;
-  color: var(--muted); 
+  color: var(--muted);
   font-weight: bold;
   transition: color 0.2s ease;
 }
-
 .floating-card a:hover {
-  color: var(--accent); 
+  color: var(--accent);
 }
 </style>
-
-
-
-
 <section id="kicad" class="card">
   <h2>KiCad — Uso y reglas de diseño (esquemático y PCB)</h2>
   <p>Diseño de esquemáticos y PCB con reglas básicas y flujo recomendado de laboratorio.</p>
   <button onclick="toggleDetalle('detalle-kicad')">Ver detalle</button>
-
   <div id="detalle-kicad" class="detalle">
-    <p>En esta práctica comenzamos con el uso más detallado de KiCad. Lo primero que realizamos fue la descarga de la librería del FabLab, la cual contiene los componentes necesarios para elaborar nuestros respectivos circuitos con las especificaciones adecuadas. Cada integrante del equipo diseñó su propio circuito.</p>
-
+    <p>En esta práctica comenzamos con el uso más detallado de KiCad. Lo primero que realizamos fue la descarga de la librería del FabLab, la cual contiene los componentes necesarios para elaborar nuestros 
+      respectivos circuitos con las especificaciones adecuadas. Cada integrante del equipo diseñó su propio circuito.</p>
     <h3>Flujo básico</h3>
     <ol>
       <li>Crear el proyecto en <strong>Eeschema</strong> (esquemáticos): añadir símbolos y redes, anotar y crear netlist o asociar con el proyecto moderno.</li>
@@ -272,7 +228,6 @@ nav a:hover {
       <li>Ruteo de pistas: usar ruteo manual o automático, preferir curvas de 45° y evitar ángulos agudos.</li>
       <li>Ejecutar DRC (Design Rule Check) y revisar errores antes de generar gerbers.</li>
     </ol>
-
     <h3>Reglas de diseño recomendadas</h3>
     <ul>
       <li><strong>Clearance</strong>: 0.25 mm (mínimo 0.15 mm en diseños compactos si el fabricante lo permite).</li>
@@ -281,72 +236,60 @@ nav a:hover {
       <li>Definir <strong>net classes</strong> (ej. SIGNAL, POWER, HIGH_SPEED) y asignar reglas específicas.</li>
       <li>Usar planos de tierra (GND pour) para mejorar EMC y disipación térmica.</li>
     </ul>
-
     <h3>Buenas prácticas</h3>
     <ul>
       <li>Nombrar y documentar capas, evitar textos sobre pads en el serigrafiado.</li>
       <li>Verificar footprints con tarjetas físicas de prueba.</li>
       <li>Guardar versiones y documentar cambios si se usa control de versiones (git).</li>
     </ul>
-
     <div class="galeria" style="display:flex;justify-content:center;margin:16px 0;">
       <img src="imagenes/pistas.jpg" alt="Captura de PCBnew / ruteo">
     </div>
     <p class="note">pistas PCB</p>
   </div>
 </section>
-
-   
    <section id="mods" class="card">
   <h2>Uso de Mods (flujo para fresado de PCB con Roland/monoFab)</h2>
   <p>Generación de trayectorias de fresado desde imágenes o gerbers.</p>
   <button onclick="toggleDetalle('detalle-mods')">Ver detalle</button>
   <div id="detalle-mods" class="detalle">
-    <p>Después de que cada uno haya diseñado sus diagramas, empleamos la página 
+    <p>Después de que cada uno haya diseñado sus diagramas, empleamos la página
       <a href="https://modsproject.org" target="_blank" style="color:var(--accent);text-decoration:none;">
         MODs (modsproject.org)
-      </a>, 
-      una herramienta en línea que posibilita transformar los diseños de nuestros circuitos en archivos aptos para la fresadora. 
-      En primer lugar, subimos al programa los archivos PNG que creamos en KiCad (los diseños, las pistas y el contorno de la placa). 
-      A continuación, ajustamos las variables de fresado, entre ellas la profundidad, la velocidad de corte y el tipo de fresa. 
-      MODs opera a través de módulos interconectados, y cada módulo cumple una función particular: la lectura de imágenes, 
-      el establecimiento de trayectorias y la creación del archivo de salida. 
+      </a>
+      una herramienta en línea que posibilita transformar los diseños de nuestros circuitos en archivos aptos para la fresadora.
+      En primer lugar, subimos al programa los archivos PNG que creamos en KiCad (los diseños, las pistas y el contorno de la placa).
+      A continuación, ajustamos las variables de fresado, entre ellas la profundidad, la velocidad de corte y el tipo de fresa.
+      MODs opera a través de módulos interconectados, y cada módulo cumple una función particular: la lectura de imágenes,
+      el establecimiento de trayectorias y la creación del archivo de salida.
       Al concluir, logramos obtener el código que usa Monofab para la fabricación física de la placa.
     </p>
     <img src="imagenes/mods.jpg" alt="Foto de la monoFab SRM-20" class="example-img">
   </div>
 </section>
-
-
     <section id="monofab" class="card">
       <h2>MonoFab (SRM-20) — Uso seguro y pasos básicos</h2>
       <p>Proceso de fresado y obtención del prototipo físico.</p>
       <button onclick="toggleDetalle('detalle-monofab')">Ver detalle</button>
       <div id="detalle-monofab" class="detalle">
-        <p>Después de crear los archivos de trayectorias en MODs, comenzamos a emplear la máquina Monofab, que es la responsable de producir la placa de circuito impreso. 
-          El procedimiento comenzó al poner la placa de cobre virgen en la máquina, asegurándola de forma adecuada para prevenir que se moviera durante el fresado. Luego, 
-          elegimos y posicionamos la fresa correspondiente (en primer lugar, la de 1/64” para las pistas y luego la de 1/32” para el contorno), configurando con precisión la altura inicial 
-          del instrumento para garantizar cortes homogéneos. 
-          Después, en la Monofab, cargamos los archivos adquiridos en MODs y establecemos los parámetros fundamentales, como la velocidad, el punto de origen (home) y la profundidad del corte. <br> <br> Cuando comenzó el proceso de fresado, la máquina fue eliminando el cobre de la superficie y 
-            delineó las pistas del circuito según el diseño digital. Tras concluir esta etapa, se cambió la fresa para hacer el corte del contorno y, de este modo, obtener la forma 
+        <p>Después de crear los archivos de trayectorias en MODs, comenzamos a emplear la máquina Monofab, que es la responsable de producir la placa de circuito impreso.
+          El procedimiento comenzó al poner la placa de cobre virgen en la máquina, asegurándola de forma adecuada para prevenir que se moviera durante el fresado. Luego,
+          elegimos y posicionamos la fresa correspondiente (en primer lugar, la de 1/64” para las pistas y luego la de 1/32” para el contorno), configurando con precisión la altura inicial
+          del instrumento para garantizar cortes homogéneos.
+          Después, en la Monofab, cargamos los archivos adquiridos en MODs y establecemos los parámetros fundamentales, como la velocidad, el punto de origen (home) y la profundidad del corte. <br> <br> Cuando comenzó el proceso de fresado, la máquina fue eliminando el cobre de la superficie y
+            delineó las pistas del circuito según el diseño digital. Tras concluir esta etapa, se cambió la fresa para hacer el corte del contorno y, de este modo, obtener la forma
             definitiva de la placa. Por último, al finalizar el mecanizado, sacamos la placa terminada y confirmamos que las pistas no presentaran imperfecciones y que estuvieran delineadas de manera correcta.
              A través de este método, pasamos del diseño virtual a un prototipo
              físico que funciona, lo cual nos permite entender de manera práctica cómo se produce una PCB por medio del fresado.</p>
-
         <video autoplay muted loop playsinline class="example-video">
   <source src="videos/video_cortadora.mp4" type="video/mp4">
-  
 </video>
-
       </div>
     </section>
-
     <section id="trazas" class="card full">
   <h2>Galería del proyecto</h2>
   <p>Evidencias</p>
-
   <div class="carousel">
-    
     <div class="carousel-images">
       <div class="slide">
         <img src="imagenes/corte.jpg" alt="Pista ejemplo 02">
@@ -361,12 +304,10 @@ nav a:hover {
         <p class="caption">Vista 3D del PCB</p>
       </div>
     </div>
-
     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
     <button class="next" onclick="moveSlide(1)">&#10095;</button>
   </div>
 </section>
-
 <style>
   .carousel {
     position: relative;
@@ -375,12 +316,10 @@ nav a:hover {
     overflow: hidden;
     border-radius: 8px;
   }
-
   .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
   }
-
   .slide {
     min-width: 100%;
     box-sizing: border-box;
@@ -388,21 +327,17 @@ nav a:hover {
     background: var(--card);
     padding: 12px 0;
   }
-
   .slide img {
     width: 50%;
     max-width: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   }
-
   .caption {
     margin-top: 8px;
     font-size: 0.9rem;
     color: var(--muted);
   }
-
-  
   .prev, .next {
     position: absolute;
     top: 50%;
@@ -417,32 +352,24 @@ nav a:hover {
     opacity: 0.8;
     transition: opacity 0.3s;
   }
-
   .prev:hover, .next:hover { opacity: 1; }
-
   .prev { left: 10px; }
   .next { right: 10px; }
 </style>
-
 <script>
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slide');
-
   function showSlide(index) {
     const total = slides.length;
     if(index >= total) currentSlide = 0;
     else if(index < 0) currentSlide = total - 1;
     else currentSlide = index;
-
     const offset = -currentSlide * 100;
     document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
   }
-
   function moveSlide(step) {
     showSlide(currentSlide + step);
   }
-
-  
   document.addEventListener('DOMContentLoaded', () => showSlide(currentSlide));
 </script>
 <section id="segundo-parcial" class="card">
@@ -452,7 +379,13 @@ nav a:hover {
   </p>
   <a href="segundo_parcial/index.html" class="button-link">Ir al Segundo Parcial</a>
 </section>
-
+<section id="tercer-parcial" class="card">
+    <h2>Tercer Parcial</h2>
+    <p>
+        Explora los proyectos y el trabajo realizado durante la tercera parte del semestre, incluyendo nuevas evidencias de producción electrónica.
+    </p>
+    <a href="tercer_parcial copy/index.html" class="button-link">Ir al Tercer Parcial</a>
+</section>
 <style>
 .button-link {
   display: inline-block;
@@ -464,15 +397,10 @@ nav a:hover {
   font-weight: bold;
   transition: background 0.3s ease;
 }
-
 .button-link:hover {
   background: #cc5500;
 }
 </style>
-
-
-
-  
 <section id="integrantes" class="card full">
   <h2>Integrantes del Equipo</h2>
   <div class="integrantes">
@@ -490,22 +418,19 @@ nav a:hover {
     </div>
   </div>
 </section>
-
 <section id="location" class="card fade-in">
   <h2>Ubicación de la Universidad</h2>
   <div class="map-container" style="width:100%;height:0;padding-bottom:56%;position:relative;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15088.484819715859!2d-98.2760029!3d19.014380049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc73e6e9e0efd%3A0x85adde493a769062!2sUniversidad%20Iberoamericana%20Puebla!5e0!3m2!1ses-419!2smx!4v1756693198982!5m2!1ses-419!2smx" 
-      style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;" 
-      allowfullscreen="" 
-      loading="lazy" 
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15088.484819715859!2d-98.2760029!3d19.014380049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc73e6e9e0efd%3A0x85adde493a769062!2sUniversidad%20Iberoamericana%20Puebla!5e0!3m2!1ses-419!2smx!4v1756693198982!5m2!1ses-419!2smx"
+      style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;"
+      allowfullscreen=""
+      loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 </section>
-
   </div>
-
   <script>
     function toggleDetalle(id) {
       const detalle = document.getElementById(id);
