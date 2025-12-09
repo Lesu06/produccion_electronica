@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio - Producción Electrónica</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff6a00;
+      --muted:#9aa4b2;
+      --glass:rgba(255,255,255,0.04);
+    }
+
+    body{
+      font-family: Roboto, Arial, sans-serif;
+      background:linear-gradient(180deg,#07101a 0%, #0f1724 100%);
+      color:#e6f0fb;
+      margin:0;
+      padding:24px;
+    }
+
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 0;
+  gap: 12px; 
+}
+
+header .logo {
+  width: 50px;     
+  height: 50px;     
+  object-fit: contain;
+}
+
+
+    header h1{
+      font-size:1.4rem;
+      margin:0;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:14px;
+    }
+
+    .card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px auto;    
+  max-width: 800px;    
+  width: 90%;          
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+
+ 
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+    .card.visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2{color:#fff;margin-top:4px;}
+    .full{grid-column:1/-1;}
+    .example-img{width:100%;border-radius:8px;}
+    .integrantes { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+    .integrante { flex: 1 1 200px; text-align: center; background: var(--glass); padding: 12px; border-radius: 8px; }
+    .integrante img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+    .galeria img { width: 100%; max-width: 280px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+    .detalle { display:none; margin-top:12px; line-height:1.6; }
+    .card button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    .card button:hover { background: #cc5500; }
+    nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 14px;
+  transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+nav a:hover {
+  transform: scale(1.2); 
+  color: var(--accent); 
+}
+.example-video {
+  width: 250px;   
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+
+  display: block;    
+  margin: 20px auto;  
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <script>
+
+  function toggleDetalle(id) {
+    const detalle = document.getElementById(id);
+    detalle.style.display = (detalle.style.display === "block") ? "none" : "block";
+  }
+
+ 
+  window.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.card');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < windowHeight - 100) { 
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); 
+  });
+</script>
+
+
+<header>
+  <div class="container">
+    
+    <img src="imagenes/logotipo.jpeg" alt="Logotipo Universidad" class="logo">
+    
+    <h1>Portafolio: Producción Electrónica</h1>
+    
+  <nav>
+  <a href="#kicad">xTool</a>
+  <a href="#mods">Altium</a>
+  <a href="#trazas">Proyecto Final</a>
+  <a href="#integrantes">Integrantes</a>
+  <a href="../index.html">Home (Primer parcial)</a>
+  </nav>
+  </div>
+</header>
+<div class="floating-card">
+  <h3>Descargas</h3>
+  <ul>
+    <li><a href="archivos/GerberFiles.zip" download>Archivos Gerber</a></li>
+  </ul>
+
+</div>
+
+<section id="introduccion" class="card">
+  <h2>Introducción al Tercer parcial</h2>
+  <p>
+El tercer parcial integra de manera práctica y conceptual los conocimientos adquiridos en el ámbito del diseño electrónico, la manufactura digital y la documentación técnica aplicada a 
+sistemas mecatrónicos. En esta etapa del curso, el estudiante consolida su capacidad para desarrollar proyectos funcionales que abarcan desde la elaboración de esquemáticos y 
+diseño de tarjetas PCB hasta la fabricación de prototipos mediante tecnologías de corte y grabado láser. impartido por el profesor: <br>
+  <a href="mailto:javier.osorio.figueroa@iberopuebla.mx" style="color: var(--accent); text-decoration: none;">
+    Javier Osorio Figueroa
+  </a>.
+</p>
+
+  <p>
+    Este módulo se centra en dos herramientas fundamentales: la máquina de corte y grabado láser xTool y el entorno profesional de diseño electrónico Altium Designer. 
+    La primera permite materializar prototipos físicos con precisión, facilitando la manufactura de piezas, cajas, paneles y componentes estructurales que forman parte del diseño mecatrónico. 
+    La segunda proporciona una plataforma avanzada para capturar esquemáticos, gestionar librerías electrónicas, realizar el ruteado de circuitos, 
+    generar archivos de producción y verificar el cumplimiento de reglas eléctricas y de manufactura.
+  </p>
+A lo largo del parcial, se busca el dominio no solo el manejo operativo de estas herramientas, sino que comprenda su importancia dentro del flujo completo de diseño: 
+desde la conceptualización del circuito, pasando por el análisis eléctrico y la simulación, hasta su implementación física mediante procesos asistidos por computadora. De este modo, el 
+alumno desarrolla competencias esenciales para la ingeniería moderna, donde la integración entre diseño digital, 
+electrónica y fabricación es una pieza clave en la creación de prototipos funcionales y productos profesionales.
+  <div class="galeria" style="display:flex;justify-content:center;margin:16px 0;">
+    <img src="imagenes/electronica.jpg" alt="Imagen de presentación del equipo" class="example-img">
+  </div>
+</section>
+
+<style>
+.floating-card {
+  position: fixed;
+  top: 100px; 
+  right: 20px; 
+  background: var(--card); 
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  z-index: 1000;
+  width: 200px;
+  border: 1px solid var(--glass);
+}
+
+.floating-card h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  text-align: center;
+  color: #fff; 
+}
+
+.floating-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-card li {
+  margin: 10px 0;
+}
+
+.floating-card a {
+  text-decoration: none;
+  color: var(--muted); 
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.floating-card a:hover {
+  color: var(--accent); 
+}
+</style>
+
+<section id="kicad" class="card">
+  <h2>Uso y manejo de la máquina xTool (grabado y corte láser)</h2>
+  <p>grabado y corte láser</p>
+  <button onclick="toggleDetalle('detalle-kicad')">Ver detalle</button>
+
+  <div id="detalle-kicad" class="detalle">
+
+    <h3>Flujo de trabajo para grabado y corte</h3>
+    <ol>
+  El proceso típico con una máquina xTool comienza con el diseño de la figura a grabar o cortar (por ejemplo en un software CAD vectorial). 
+  Ese diseño se importa al software de la máquina (xTool Creative Space, XCS) y se selecciona el modo de
+  procesamiento adecuado (Laser Flat para materiales planos). A continuación se coloca la pieza sobre la base, se enfoca el láser (la xTool puede medir automáticamente el espesor), se ajustan 
+  potencia y velocidad según el material, y finalmente se inicia el trabajo de corte o grabado. En resumen:  preparar y abrir el 
+  archivo de diseño en XCS,  escoger modo (plano, cilíndrico, etc.), fijar material en la plataforma y calibrar altura, configurar parámetros (potencia/velocidad) y  lanzar el proceso
+    </ul>
+  <h3>Tipos de archivos compatibles</h3>
+  El software xTool Creative Space admite formatos vectoriales y de imagen comunes. Los archivos de trazado (dibujo) 
+  compatibles son SVG y DXF, mientras que para grabado de trama acepta imágenes como PNG, JPG/JPEG o BMP. 
+  Formatos adicionales (GIF, TIFF, etc.) suelen no estar soportados directamente, por lo que lo habitual es convertir los diseños a 
+  SVG/DXF para vectores o a PNG/JPEG para mapas de bits.
+  <h3>Parámetros recomendados (potencia, velocidad, materiales)</h3>
+  Los fabricantes proporcionan tablas de parámetros de referencia según el material y el espesor. Como regla general, para corte se usan potencias altas (~100%) y velocidades bajas (por ejemplo, 
+  cortar madera contrachapada de 3 mm a 100% potencia y ~3 mm/s). Para grabado vectorial, suele emplearse menor potencia (40–70%) y velocidad moderada (30–80 mm/s). 
+  El grabado en trama (raster) normalmente requiere potencia alta (80–100%) y velocidades medias/altas (40–150 mm/s). 
+  En cualquier caso estos valores varían según el modelo (p. ej. xTool D1 de 5 W vs 10 W) y el material, 
+  por lo que siempre es conveniente consultar las tablas oficiales (como la de xTool M1 o D1) para ajustes iniciales.
+  <h3>Buenas prácticas de seguridad</h3>
+  Las máquinas láser requieren precauciones: no dirigir la vista hacia el haz láser y usar protección ocular adecuada para la longitud de onda del láser (lentes especializadas).
+  Debe garantizarse ventilación o extracción de humos, ya que al cortar o grabar materiales se producen gases y 
+partículas; en particular hay que evitar PVC y plásticos clorados (al liberarse ácido clorhídrico tóxico y cloro). El área de trabajo debe mantenerse libre 
+de materiales inflamables y con un extintor cerca en caso de incendio. No se recomienda dejar la máquina sin vigilancia durante el proceso. En resumen: utilizar gafas de 
+seguridad láser, sistemas de ventilación/extracción efectivos y revisar la compatibilidad del material antes de procesarlo
+omtech.es.
+<h3>Recomendaciones de mantenimiento</h3>
+Para prolongar la vida útil de la xTool, es esencial un mantenimiento periódico: realizar inspección diaria (limpiar polvo y residuos del lente y la superficie de trabajo, verificar cables y conexiones). 
+Semanalmente conviene limpiar los lentes ópticos con aire comprimido o paño para óptica, comprobar el nivel del sistema de refrigeración (si lo tiene) y limpiar filtros/ventiladores. 
+Mensualmente se recomienda recalibrar el láser (alineación de haz) y actualizar el firmware/software del sistema. Anualmente o tras cierto uso intensivo, 
+realizar una revisión técnica general (alineación, limpieza interna profunda, reemplazo de piezas desgastadas). En todo momento, usar repuestos originales y seguir las instrucciones del fabricante.
+  
+    <div class="galeria" style="display:flex;justify-content:center;margin:16px 0;">
+      <img src="imagenes/xTool.jpg alt="Captura de PCBnew  ruteo>
+    </div>
+    <p class="note">xTool</p> 
+  </div>
+</section>
+
+   
+   <section id="mods" class="card">
+  <h2>Uso y manejo del software Altium Designer</h2>
+  <p>Detalle del flujo de trabajo completo para el diseño de una Placa de Circuito Impreso (PCB) en Altium.</p>
+  <button onclick="toggleDetalle('detalle-mods')">Ver detalle</button>
+  <div id="detalle-mods" class="detalle">
+
+<h2>Diseño de esquemáticos</h2>
+En Altium Designer se inicia definiendo el esquemático eléctrico del circuito. Se colocan símbolos de componentes (resistencias, ICs, conectores, etc.) extraídos de librerías, y se conectan
+mediante cables y net labels para definir la interconexión. Es posible usar esquemas multicapa o jerárquicos (vías de señal, canales repetidos) en diseños complejos. Se recomienda nombrar 
+claramente los nets, usar polaridades adecuadas y 
+verificar errores con las herramientas ERC (Electrical Rule Check) integradas al capturar cada hoja esquemática.
+<h3>Gestión y uso de librerías</h3>
+Altium permite organizar los componentes en librerías de proyecto o globales. Por ejemplo, con el comando Design » Create Schematic Library se puede generar un archivo. 
+SchLib que agrupa todos los símbolos usados en el esquemático activo
+Esto facilita compartir el diseño con terceros o archivar el proyecto. Los componentes en la librería conservan vínculos a sus referencias originales (fabricante, huella)
+Es buena práctica mantener actualizadas las librerías, 
+documentar parámetros (valor, tolerancia, fabricante) y evitar duplicaciones.
+<h3>Ruteado manual y automático</h3>
+Altium ofrece enrutado manual interactivo avanzado: los enrutadores (Interactive Routing) ayudan a trazar pistas optimizando distancias y evitando colisiones. 
+También existe un autoruteador integrado para casos simples. En general, se suele trazar manualmente las pistas críticas (señales de alta velocidad, alimentación) y usar enrutado automático 
+solo para ruteados secundarios. 
+Las herramientas permiten funcionalidades como push-and-shove (reajuste dinámico) y ajuste de esquinas (mitering).
+<h3>Asignación de etiquetas (net labels y buses)</h3>
+Los net labels sirven para nombrar señales y conectar diferentes partes del esquemático. En Altium, cada cable puede recibir una etiqueta de red (p.ej. VCC, CLK) que identifica esa señal. 
+Los buses agrupan señales correlacionadas con nombres base comunes. 
+Por ejemplo, tener nets Data1, Data2, … Data8 se puede representar mediante un bus Data[1..8]. Para crear un bus válido, cada red individual y la propia línea de bus deben estar etiquetadas correctamente. 
+En un diseño multicapa se usan además puertos (ports) para pasar señales entre hojas.
+<h3>Diseño físico del PCB (forma, dimensiones)</h3>
+Una vez listo el esquemático, se define el contorno de la placa en Altium. Al crear un nuevo PCB, se puede ajustar el tamaño y forma con Design » Edit Board Shape, 
+arrastrando las asas de edición para modificar cada lado o vértice. 
+También existe la opción Redefine Board Shape para dibujar manualmente el perímetro desde cero. 
+Es importante establecer los orígenes y rejillas adecuados antes de ubicar componentes. Se suelen reservar capas mecánicas (Mechanical) para anotar dimensiones, agujeros de montaje y zonas de restricción.
+<h3>Generación de archivos de fabricación (Gerbers, BoM, Pick and Place)</h3>
+Para fabricar el PCB se exportan archivos estándar. Los Gerbers (y opcionalmente Gerber X2 o IPC-2581) se generan con File » Fabrication Outputs » Gerber Files. 
+También se obtienen archivos de taladro NC, planos de capas, etc. La lista de materiales (BOM) se extrae con las herramientas de Altium (Report » Bill of Materials o el diseño ActiveBOM) que 
+recopilan los componentes del diseño. El archivo Pick & Place (con coordenadas XY de cada componente para ensamblaje) se genera con File » Fabrication Outputs » Pick and Place Files. Es recomendable 
+verificar con el fabricante los formatos requeridos y ajustar las capas/márgenes según sus especificaciones.
+<h3>Simulación de circuitos</h3>
+Altium incorpora un simulador de circuito Mixed-Signal basado en SPICE. Permite analizar el comportamiento eléctrico (analógico y digital) del esquemático antes de construirlo. 
+El simulador MixedSim es compatible con modelos SPICE (incluye muchos LTspice, PSpice). Para usarlo, los componentes deben tener modelos de simulación asignados y se definen 
+fuentes de señal o sondas de salida en el esquema. El proceso incluye verificar el proyecto, 
+configurar el tipo de análisis (transitorio, AC, DC), ejecutar y revisar las curvas de respuesta.
+<h3>Verificación de reglas de diseño (DRC)</h3>
+Altium verifica automáticamente las reglas de diseño mientras se trabaja y permite hacer una comprobación final. El DRC (Design Rule Check) revisa que se cumplan los clearances mínimos, anchos de pista, reglas de capas, impedancias, etc. 
+de acuerdo a los parámetros definidos. Se puede correr online durante el enrutado o en modo lote al finalizar. La documentación recomienda hacer un DRC antes de generar los archivos de 
+salida para asegurarse de que no existan violaciones de diseño
+.
+<h3>Buenas prácticas de diseño profesional</h3>
+Finalmente, en un diseño profesional se aconseja mantener esquemas claros y bien documentados, nombrar señales y referencias de manera consistente, y usar versiones controladas del diseño. 
+Es importante definir reglas de diseño desde el inicio (espaciamientos, anchos, etc.), aplicar filtrado y desacoplo en líneas de alimentación, y considerar requisitos de alta velocidad o térmicos 
+según el proyecto. Revisiones cruzadas (peer review), 
+gestión de versiones (Altium Vault/Workspace) y cumplir con los estándares del fabricante (DFM) garantizan un producto fiable y manufacturable.
+</div>
+</section>
+
+
+
+
+
+
+
+   <section id="trazas" class="card">
+  <h2>Proyecto Final</h2>
+  <p>Consola de Videojuegos</p>
+  <button onclick="toggleDetalle('detalle-trazas')">Ver detalle</button>
+  <div id="detalle-trazas" class="detalle">
+<h3>introduccion</h3>
+El desarrollo de una consola de videojuegos representa un ejercicio integral de ingeniería en el que convergen conocimientos de electrónica, programación, la creación del circuito electrónico, el diseño de la PCB, 
+la integración de controles de usuario, la interfaz visual, la programación del flujo lógico del juego y la fabricación del prototipo físico.
+<h3>Componentes</h3>
+<ul>
+  <li>Adafruit Trinket M0 × 1</li>
+  <li>Módulo de carga y elevación de voltaje (step-up) × 1</li>
+  <li>Pantalla OLED 2.42 pulgadas × 1</li>
+  <li><h5>Resistencias:</h5></li>
+  <li>1 kΩ × 1</li>
+  <li>5.1 kΩ × 1</li>
+  <li>10 kΩ × 1</li>
+  <li>15 kΩ × 1</li>
+  <li>20 kΩ × 1</li>
+  <li>33 kΩ × 1</li>
+  <li>39 kΩ × 1</li>
+  <br>
+  <li>Batería × 1</li>
+  <li>Botón táctil (tactile switch) × 1</li>
+  <li>Interruptor On/Off × 1</li>
+  <li>Tornillos M2 × varios</li>
+  <li>Separadores M2 × varios</li>
+</ul>
+<h3>Step 1: PCB</h3>
+El primer paso en el diseño de una consola de videojuegos es la elaboración del esquemático electrónico, el cual constituye la representación 
+lógica del circuito. Su función es describir de manera clara cómo se interconectan los componentes fundamentales del sistema, tales como el microcontrolador, 
+reguladores de voltaje, memoria, drivers, botones, puertos, pantalla y cualquier módulo adicional utilizado.
+Un esquemático bien estructurado permite:
+<ul>
+  <li>Identificar la función de cada componente dentro del sistema.</li>
+  <li>Verificar la correcta interconexión y coherencia eléctrica.</li>
+  <li>Facilitar la detección de errores antes de pasar al diseño físico de la PCB.</li>
+  <li>Establecer una base sólida para la generación del ruteo en la siguiente etapa.</li>
+  <h4>2. Procedimiento para crear el esquemático</h4>
+  <ul>
+    <li>Abrir el software de diseño electrónico</li>
+    <li>Crear un nuevo proyecto y asignarle un nombre descriptivo.</li>
+    <li>Definir las hojas de trabajo, ya sea en una sola página o en varias, dependiendo de la complejidad del sistema.</li>
+    <li>Agregar los componentes desde las librerías disponibles o desde librerías personalizadas.</li>
+    <li>Especificar valores, referencias, footprints y anotaciones para cada componente.</li>
+    <li>Realizar las conexiones con líneas claras, incluyendo etiquetas, buses y señales críticas.</li>
+  </ul>
+  <h4>3. Exportación del esquemático en PDF</h4>
+  Una vez terminado y verificado, el esquemático debe exportarse en formato PDF, debido a que este formato:
+  <ul>
+    <li>Mantiene la relación tamaño-escala de forma consistente.</li>
+    <li>Evita distorsiones de geometría que pueden presentarse en otros formatos.</li>
+    <li>Es fácilmente convertible a imágenes vectoriales.</li>
+    <li>Garantiza que cualquier persona pueda visualizarlo sin necesidad del software original.</li>
+  </ul>
+  <h4>¿Por qué NO exportar en Gerber en esta etapa?</h4>
+  Los archivos Gerber corresponden al diseño final de las capas de una PCB, no a los esquemáticos. Utilizarlos para convertir pistas a SVG puede generar múltiples problemas:
+  <ul>
+    <li>Los Gerber contienen detalles de manufactura (restricciones, aperturas, rellenos, offsets) que no siempre se traducen bien a SVG.</li>
+    <li>La conversión puede distorsionar curvas, pads o anchos de pista.</li>
+    <li>El proceso puede generar errores de alineación entre capas.</li>
+    <li>La interpretación gráfica varía entre conversores, causando inconsistencias.</li>
+  </ul>
+  El PDF, en cambio, ofrece una representación visual directa del esquemático sin interpretación de fabricación, lo que lo hace más adecuado para documentación, 
+  revisión y conversiones posteriores si se requieren.
+  <h3>Paso 2: Montaje de la pantalla en el panel frontal</h3>
+ <h4>Instrucciones</h4>
+<ul>
+  <li>Coloca pines macho en la pantalla. Asegúrate de que los pines no sobresalgan por arriba, ya que interferirían con el panel frontal.</li>
+  <li>Inserta los pines, sostiene el plástico del header y presiona contra una superficie plana para nivelarlos respecto a la parte superior de la pantalla.</li>
+  <li>Suelda cada pin para fijarlos.</li>
+  <li>Coloca la pantalla sobre el panel frontal y fíjala con tornillos M2 × 14 mm y sus tuercas.</li>
+  <li>Agrega un separador M2 × 5 mm en cada tornillo.</li>
+  <li>Añade otros dos tornillos M2 en las esquinas inferiores del panel frontal, sin tuerca; solo agrega un separador M2 × 7 mm en cada uno.</li>
+  <li>Para verificar el ensamblaje, coloca el PCB sobre los tornillos y empújalos a través de los agujeros. Puede que necesites doblarlos ligeramente con unas pinzas para alinearlos correctamente, 
+    incluso cuando las perforaciones del panel y del PCB coinciden.</li>
+</ul>
+<h3>Paso 3: Instalación de los interruptores momentáneos</h3>
+Se utilizan switches SMD. En la primera versión se usaron de orificio pasante, pero producían interferencias por el contacto de los dedos.
+<h4>Instrucciones:</h4>
+<ul>
+  <li>Instala primero los botones arriba (UP) y abajo (DOWN).</li>
+  <li>Coloca una pequeña cantidad de soldadura en una de las almohadillas del botón UP.</li>
+  <li>Posiciona el interruptor sobre las almohadillas y calienta la soldadura para fijarlo.</li>
+  <li>Una vez alineado, solda las otras tres patas.</li>
+  <li>Repite el procedimiento para el botón DOWN.</li>
+  <li>Luego instala los botones LEFT, RIGHT, A y B.</li>
+</ul>
+<h3>Paso 4: Montaje del módulo de carga/boost y del Trinket M0</h3>
+El módulo permite cargar una batería (por ejemplo de 3.6 V) y elevar el voltaje mediante un potenciómetro.
+<h4>Instrucciones:</h4>
+<ul>
+  <li>Ajusta el módulo a 5 V de salida.</li>
+  <li>Conéctalo a una fuente inferior a 5 V.</li>
+  <li>Mide la salida con un multímetro y gira el potenciómetro hasta obtener 5 V precisos.</li>
+  <li>Fíjalo al PCB con un poco de pegamento instantáneo.</li>
+  <li>Añade soldadura a sus pines y conecta cada uno a la PCB con alambres (piernas de resistencias funcionan muy bien).</li>
+  <li>Dobla y recorta el alambre para que haga buen contacto con la almohadilla del PCB.</li>
+  <li>solda cada conexión para asegurar firmeza.</li>
+  <li>Coloca el Adafruit Trinket M0, orientado correctamente (Micro-USB hacia afuera).</li>
+</ul>
+<h3>Paso 5: Instalación del resto de componentes</h3>
+<h4>Instrucciones:</h4>
+<ul>
+  <li>Solda todas las resistencias tras verificar su valor.</li>
+  <li>Instala el interruptor de palanca (toggle switch).</li>
+  <li>Antes de soldar el conector hembra para la pantalla, recorta ligeramente las patas del header de la pantalla.</li>
+  <li>Coloca el header hembra en las patas y ajusta el panel frontal con el PCB.</li>
+  <li>Si la altura es correcta, suelda el header hembra en el PCB y retira el panel.</li>
+  <li>Para la batería:</li>
+  <ul>
+    <li>Suelda un punto en positivo y negativo (usa un cautín bien caliente).</li>
+    <li>Coloca una pierna de resistencia en cada terminal y dóblalas para que queden planas.</li>
+    <li>Fija la batería con unas gotas de superglue.</li>
+    <li>Recorta los alambres y suéldalos al PCB.</li>
+  </ul>
+  <li>El hardware queda listo para pruebas; ahora puedes cargar el código de Star Wars</li>
+</ul>
+<h3>Paso 6: Configuración del Arduino IDE</h3>
+El Trinket M0 tiene memoria suficiente para este proyecto, a diferencia del Arduino Nano.
+<ul>
+  <li><h4>Instalación de soporte de tarjeta</h4></li>
+  <li>Abre Arduino IDE → Archivo > Preferencias.</li>
+  <li>En “URLs adicionales”, agrega:</li>
+  <li>
+    <a href="https://adafruit.github.io/arduino-board-index/package_adafruit_index.json" download>
+        Paquete JSON de Adafruit (Arduino Board Index)
+    </a>
+</li>
+<li><h4>Paquetes incluidos:</h4></li>
+<li>Adafruit AVR Boards</li>
+<li>Adafruit SAMD Boards</li>
+<li>Arduino Leonardo & Micro MIDI-USB</li>
+<ul>
+  <li>Ve a Herramientas > Board Manager y busca Arduino SAMD Boards (1.6.11 o superior).</li>
+  <li>Instálalo.</li>
+  <li>Reinicia Arduino IDE.</li>
+  <li>Selecciona la tarjeta:</li>
+  <li>Herramientas > Placa > Adafruit SAMD Boards > Trinket M0</li>
+</ul>
+<h3>Paso 7: Cargar el sketch en el Trinket M0</h3>
+<h4>Instrucciones:</h4>
+<ul>
+<li>
+    <a href="archivos/Star_Wars_V1.ino" download="Star_Wars_V1">
+        Descarga el programa (.ino)
+    </a>
+</li>
+
+  <li>Conecta el Trinket M0.</li>
+  <li>Abre el sketch en Arduino IDE.</li>
+  <li>Selecciona la placa Trinket M0.</li>
+  <li>Sube el código.</li>
+  <li>Si la pantalla no muestra nada:
+    <ul><li>Enciende el dispositivo.</li>
+    <li>Vuelve a subir el código.</li>
+  <li>Después desconecta el USB y prueba nuevamente.</li></ul>
+  </li>
+</ul>
+<h3>Paso 8: Ensamblaje final del PCB y panel frontal</h3>
+<h4>Instrucciones:</h4>
+<ul>
+  <li>Asegura el panel frontal contra el PCB verificando la alineación.</li>
+  <li>Coloca tuercas M2 en los tornillos para fijarlos.</li>
+  <li>Si los tornillos son demasiado largos, recórtalos con pinzas o Dremel y lima los bordes.</li>
+  <li>El dispositivo queda ensamblado</li>
+</ul>
+</ul>
+</ul>
+
+</div>
+</section>
+
+  <section id="trazas" class="card full">
+  <h2>Galería del proyecto</h2>
+  <p>Evidencias</p>
+  <div class="carousel">
+    <div class="carousel-images">
+      <div class="slide">
+        <img src="imagenes/PCB.png" alt="Pista ejemplo 02">
+        <p class="caption">PCB</p>
+      </div>
+      <div class="slide">
+        <img src="imagenes/Schematic.png" alt="Pista ejemplo 03">
+        <p class="caption">Diagrama esquemático del proyecto</p>
+      </div>
+      <div class="slide">
+        <img src="imagenes/FQNWSNDMFFQ4LLJ.jpg" alt="Pista ejemplo 04">
+        <p class="caption">Proyecto</p>
+      </div>
+            <div class="slide">
+        <img src="imagenes/starwars.png" alt="Pista ejemplo 04">
+        <p class="caption">Starwars</p>
+      </div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+</section>
+<style>
+  .carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background: var(--card);
+    padding: 12px 0;
+  }
+  .slide img {
+    width: 50%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+  .caption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  .prev:hover, .next:hover { opacity: 1; }
+  .prev { left: 10px; }
+  .next { right: 10px; }
+</style>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  function showSlide(index) {
+    const total = slides.length;
+    if(index >= total) currentSlide = 0;
+    else if(index < 0) currentSlide = total - 1;
+    else currentSlide = index;
+    const offset = -currentSlide * 100;
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+  }
+  function moveSlide(step) {
+    showSlide(currentSlide + step);
+  }
+  document.addEventListener('DOMContentLoaded', () => showSlide(currentSlide));
+</script>
+<section id="segundo-parcial" class="card">
+  <h2>Home (Primer Parcial)</h2>
+  <p>
+    Accede a la primera parte del portafolio, donde se encuentran las evidencias, proyectos y desarrollos correspondientes al primer parcial.
+  </p>
+  <a href="../index.html" class="button-link">Ir al Primer Parcial</a>
+</section>
+
+
+<style>
+.button-link {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.button-link:hover {
+  background: #cc5500;
+}
+</style>
+
+
+
+  
+<section id="integrantes" class="card full">
+  <h2>Integrantes del Equipo</h2>
+  <div class="integrantes">
+    <div class="integrante">
+      <img src="imagenes/sisis.jpg" alt="Integrante 1">
+      <p><strong>Jesus Santiago Muñoz</strong></p>
+      <p>Ingeniería en Mecatrónica</p>
+      <p><a href="mailto:201243@iberopuebla.mx">201243@iberopuebla.mx</a></p>
+    </div>
+    <div class="integrante">
+      <img src="imagenes/nonono.jpg" alt="Integrante 2">
+      <p><strong>Raul Sanchez Lora</strong></p>
+      <p>Ingeniería en Mecatrónica</p>
+      <p><a href="mailto:201583@iberopuebla.mx">201583@iberopuebla.mx</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="card fade-in">
+  <h2>Ubicación de la Universidad</h2>
+  <div class="map-container" style="width:100%;height:0;padding-bottom:56%;position:relative;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15088.484819715859!2d-98.2760029!3d19.014380049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc73e6e9e0efd%3A0x85adde493a769062!2sUniversidad%20Iberoamericana%20Puebla!5e0!3m2!1ses-419!2smx!4v1756693198982!5m2!1ses-419!2smx" 
+      style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+  </div>
+
+  <script>
+    function toggleDetalle(id) {
+      const detalle = document.getElementById(id);
+      detalle.style.display = (detalle.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
